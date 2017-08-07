@@ -3,6 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaPlugin } from 'ionic-native';
+import { Media } from '@ionic-native/media';
+import { NativeAudio } from 'ionic-native'; 
 
 import { HomePage } from '../pages/home/home';
 @Component({

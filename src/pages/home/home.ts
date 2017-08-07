@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 
 //import { FileChooser } from '@ionic-native/file-chooser';
 import { MediaPlugin, FileChooser} from 'ionic-native';
-//import { NativeAudio } from '@ionic-native/native-audio';
+import { Media } from '@ionic-native/media';
+import { NativeAudio } from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,7 @@ export class HomePage {
   file;
   //nativeAudio;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public media: Media) {
 
   }
 
@@ -35,24 +36,32 @@ export class HomePage {
 
 
   audioplay() {
-    var pathalone = this.nativepath.substring(8);
+      var pathalone = "https://freesound.org/data/previews/121/121904_1386366-lq.mp3";//this.nativepath.substring(19);//'src/app/assets/Hydrogen.mp3';
 
-    this.file = new MediaPlugin(pathalone,(status) => {
+      this.file = new MediaPlugin(pathalone,(status) => {
 
-    });
+      });
 
     ///src/sound/
     //this.file = this.media.create('../sound/Hydrogen.mp3');
     this.file.play(); 
 
-    //var audio = new Audio('../sound/Hydrogen.mp3'');
+    //var audio = new Audio('../sound/Hydrogen.mp3');
     //audio.play();
-    //this.nativeAudio.preloadSimple('uniqueId1', '../sound/Hydrogen.mp3');
+   // this.nativeAudio.preloadSimple('uniqueId1', '../sound/Hydrogen.mp3');
     //this.nativeAudio.play('uniqueId1', () => console.log('uniqueId1 is done playing'));
   }
 
-  // playsound(){
-  //   this.file.play();
-  // }
+  playaudio() {
+    this.file.play();
+  }
+  
+  audiostop() {
+    this.file.stop();
+  }
+  
+  audiopause() {
+    this.file.pause();
+  }
 
 }

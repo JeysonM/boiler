@@ -14,3 +14,28 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.titulo{
+    color: #333;
+    text-align: center;
+}
+
+.user {
+  img {
+    margin:        0 auto;
+    display:       block;
+    max-width:     300px;
+    box-shadow:    0 1px 2px rgba(black, .3);
+    
+  }
+
+  h1 {
+    color:      #333;
+    margin:     10px 0 20px;
+    text-align: center;
+  }
+
+}
+
+
